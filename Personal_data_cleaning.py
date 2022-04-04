@@ -42,3 +42,28 @@ df_out = df.drop(["Unnamed: 0"], axis =1)
 # df_out.to_csv("personal_salary_data_cleaned.csv",index = False)
 
 pd.read_csv("personal_salary_data_cleaned.csv")
+
+
+def title_simplifier(title):
+    if "data scientist" in title.lower():
+        return "data scientist"
+    elif "data engineer" in title.lower():
+        return "data engineer"
+    elif "analyst" in title.lower():
+        return "analyst"
+    elif "machine learning" in title.lower():
+        return "machine learning"
+    elif "manager" in title.lower():
+        return "manager"
+    elif "director" in title.lower():
+        return "director"
+    else:
+        return "na"
+    
+def seniority(title):
+    if "sr" in title.lower() or "senior" in title.lower() or "lead" in title.lower() or "principal" in title.lower():
+        return "senior"
+    elif "jr" in title.lower() or "jr." in title.lower():
+        return "jr"
+    else:
+        return "na"
